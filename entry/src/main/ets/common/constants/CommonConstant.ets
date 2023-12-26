@@ -67,5 +67,10 @@ export default class CommonConstants {
     "学习ArkTS",
     "看剧放松"
   ];
+
+  static readonly INDEX_PAGE_LIST_DATA: Array<string> = [
+    "水果排行",
+    "待办列表",
+  ];
 }
 

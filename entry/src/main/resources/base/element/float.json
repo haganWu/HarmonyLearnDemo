@@ -31,6 +31,10 @@
     {
       "name": "list_item_height",
       "value": "64vp"
+    },
+    {
+      "name": "home_list_item_height",
+      "value": "36vp"
     }
   ]
 }
