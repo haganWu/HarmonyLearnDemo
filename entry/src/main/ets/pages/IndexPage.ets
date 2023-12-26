@@ -4,14 +4,31 @@ import router from '@ohos.router';
 
 let msg: string = 'Index页面传递过来的数据'
 
+// class routerParams {
+//   src: string
+//   constructor(src: string) {
+//     this.src = src;
+//   }
+// }
+
 @Entry
 @Component
 struct IndexPage {
   private itemList: Array<string>;
+  // private src:string = '';
 
   aboutToAppear() {
     this.itemList = CommonConstants.INDEX_PAGE_LIST_DATA
   }
+
+  // onPageShow(){
+  //   this.src = (router.getParams() as routerParams).src
+  //   if(this.src != null && this.src.length > 0){
+  //     promptAction.showToast({
+  //       message: this.src
+  //     })
+  //   }
+  // }
 
   build() {
     Column() {
