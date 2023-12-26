@@ -10,7 +10,7 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "待办列表"
     },
     {
       "name": "page_type",
@@ -75,6 +75,10 @@
     {
       "name": "fruit_carambola",
       "value": "carambola"
+    },
+    {
+      "name": "page_title",
+      "value": "待办"
     }
   ]
 }

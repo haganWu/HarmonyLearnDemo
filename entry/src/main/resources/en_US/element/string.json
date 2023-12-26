@@ -10,7 +10,7 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "ToDoList"
     },
     {
       "name": "page_type",
@@ -75,6 +75,9 @@
     {
       "name": "fruit_carambola",
       "value": "carambola"
+    },{
+      "name": "page_title",
+      "value": "ToDo"
     }
   ]
 }

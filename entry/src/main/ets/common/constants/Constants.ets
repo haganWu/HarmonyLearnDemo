@@ -20,6 +20,7 @@ export enum FontSize {
   SMALL = 14,
   MIDDLE = 16,
   LARGE = 20,
+  BIGGER = 28,
 };
 
 /**
