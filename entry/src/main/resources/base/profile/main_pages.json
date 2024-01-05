@@ -3,6 +3,7 @@
     "pages/IndexPage",
     "pages/RankPage",
     "pages/ToDoPage",
-    "pages/SecondPage"
+    "pages/SecondPage",
+    "pages/NoticePage"
   ]
 }

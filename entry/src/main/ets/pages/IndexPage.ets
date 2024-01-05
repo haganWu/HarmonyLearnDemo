@@ -70,6 +70,9 @@ struct IndexPage {
       case 2:
         router.pushUrl({ url: 'pages/SecondPage', params: { src: msg } })
         break;
+      case 3:
+        router.pushUrl({ url: 'pages/NoticePage'})
+        break;
     }
   }
 }

@@ -71,7 +71,8 @@ export default class CommonConstants {
   static readonly INDEX_PAGE_LIST_DATA: Array<string> = [
     "水果排行",
     "待办列表",
-    "页面跳转"
+    "页面跳转",
+    "通知"
   ];
 }
 
