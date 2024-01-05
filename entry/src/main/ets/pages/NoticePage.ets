@@ -1,6 +1,8 @@
 import notification from '@ohos.notificationManager';
 import image from '@ohos.multimedia.image';
 import wantAgent from '@ohos.wantAgent';
+import reminderAgentManager from '@ohos.reminderAgentManager';
+import notificationManager from '@ohos.notificationManager';
 
 @Entry
 @Component
@@ -17,6 +19,10 @@ struct NoticePage {
         Button('发送进度通知')
           .margin({ top: 30 })
           .onClick(() => this._sendDownloadNotice());
+        Divider().margin({ top: 30 })
+        Button('添加提醒')
+          .margin({ top: 30 })
+          .onClick(() => this._addReminder());
       }
       .width('100%')
     }
@@ -77,7 +83,7 @@ struct NoticePage {
     })
   }
 
-  async  _sendDownloadNotice() {
+  async _sendDownloadNotice() {
     // 点击通知返回到应用
     var wantAgentInfo = {
       wants: [
@@ -114,6 +120,39 @@ struct NoticePage {
       console.info('publish success')
     }).catch((error) => {
       console.error(`publish failed, dcode:${error.code}, message: ${error.message}`)
+    })
+  }
+
+  _addReminder() {
+    console.log('notice', '添加闹钟提醒');
+    let targetReminderAgent: reminderAgentManager.ReminderRequestAlarm = {
+      reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_ALARM, // 闹钟类型
+      hour: 21,
+      minute: 31,
+      daysOfWeek: [],
+      title: '',
+      ringDuration: 5,
+      snoozeTimes: 0,
+      timeInterval: 0,
+      actionButton: [
+        {
+          title: '关闭',
+          type: reminderAgentManager.ActionButtonType.ACTION_BUTTON_TYPE_CLOSE
+        },
+        {
+          title: '稍后提醒',
+          type: reminderAgentManager.ActionButtonType.ACTION_BUTTON_TYPE_SNOOZE
+        },
+      ],
+      notificationId: 1,
+      expiredContent: 'this reminder has expired',
+      slotType: notificationManager.SlotType.SOCIAL_COMMUNICATION
+    }
+    reminderAgentManager.publishReminder(targetReminderAgent).then(res => {
+      console.info('Success in publishing reminder.')
+      let reminderId: number = res; // 发布提醒ID
+    }).catch(err => {
+      console.error(`Failed to publish reminder: Code: ${err.code}, message:${err.message}`);
     })
   }
 }
